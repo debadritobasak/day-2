@@ -1,0 +1,74 @@
+
+stack = []
+MAX_SIZE = 10
+
+def push():
+    if len(stack) == MAX_SIZE:
+        print("Stack Overflow")
+    else:
+        value = input("Enter value: ")
+        stack.append(value)
+        print("Element pushed successfully")
+
+def pop_item():
+    if len(stack) == 0:
+        print("Stack Underflow")
+    else:
+        print("Popped element:", stack.pop())
+
+def peek():
+    if len(stack) == 0:
+        print("Stack is empty")
+    else:
+        print("Top element:", stack[-1])
+
+def display():
+    if len(stack) == 0:
+        print("Stack is empty")
+    else:
+        print("Stack from TOP to BOTTOM:")
+        for i in range(len(stack) - 1, -1, -1):
+            print(stack[i])
+
+def count_elements():
+    print("Number of elements:", len(stack))
+
+def clear_stack():
+    confirm = input("Clear entire stack? (yes/no): ")
+    if confirm.lower() == "yes":
+        stack.clear()
+        print("Stack cleared successfully")
+    else:
+        print("Clear operation cancelled")
+
+while True:
+    print("\n--- STACK MANAGEMENT SYSTEM ---")
+    print("1. PUSH")
+    print("2. POP")
+    print("3. PEEK")
+    print("4. DISPLAY")
+    print("5. COUNT ELEMENTS")
+    print("6. EXIT")
+    print("7. CLEAR STACK")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        push()
+    elif choice == "2":
+        pop_item()
+    elif choice == "3":
+        peek()
+    elif choice == "4":
+        display()
+    elif choice == "5":
+        count_elements()
+    elif choice == "6":
+        print("Exiting program")
+        break
+    elif choice == "7":
+        clear_stack()
+    else:
+        print("Invalid choice. Enter 1 to 7.")
+
+    print("Current stack:", stack)

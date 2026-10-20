@@ -1,0 +1,19 @@
+
+def peek(stack):
+    if len(stack) == 0:
+        print("Stack is empty")
+    else:
+        return stack[-1]
+
+def display(stack):
+    if len(stack) == 0:
+        print("Stack is empty")
+    else:
+        print("Stack from TOP to BOTTOM:")
+        for i in range(len(stack) - 1, -1, -1):
+            print(stack[i])
+
+stack = [10, 20, 30, 40]
+
+print("Top element:", peek(stack))
+display(stack)

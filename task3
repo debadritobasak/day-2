@@ -1,0 +1,30 @@
+
+stack = []
+MAX_SIZE = 5
+
+def push(value):
+    if len(stack) < MAX_SIZE:
+        stack.append(value)
+        print("Element pushed:", value)
+    else:
+        print("Stack Overflow")
+
+def pop_item():
+    if len(stack) > 0:
+        return stack.pop()
+    else:
+        print("Stack Underflow")
+
+def peek():
+    if len(stack) > 0:
+        return stack[-1]
+    else:
+        print("Stack is empty")
+
+push(10)
+push(20)
+push(30)
+
+print("Popped element:", pop_item())
+print("Top element:", peek())
+print("Stack:", stack)

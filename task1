@@ -1,0 +1,35 @@
+
+stack = []
+MAX_SIZE = 5
+
+def push():
+    if len(stack) == MAX_SIZE:
+        print("Stack Overflow")
+    else:
+        value = int(input("Enter value to push: "))
+        stack.append(value)
+    print("Stack:", stack)
+
+def pop_item():
+    if len(stack) == 0:
+        print("Stack Underflow")
+    else:
+        value = stack.pop()
+        print("Popped element:", value)
+    print("Stack:", stack)
+
+while True:
+    print("\n1. PUSH")
+    print("2. POP")
+    print("3. EXIT")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        push()
+    elif choice == "2":
+        pop_item()
+    elif choice == "3":
+        break
+    else:
+        print("Invalid choice")
